@@ -7,6 +7,8 @@ import socket
 def handler(client_socket):
     recv_data = client_socket.recv(4096)
 
+    print(recv_data.decode())
+
     http_header = "HTTP/1.1 200 OK\r\n"+"\r\n"
     http_body = "<h1>Hi Sherry, welcome to our first website!<h1>\r\n"+"<h2>Le vent se lève, il faut tenter de vivre<h2>\r\n"
     http_response = http_header+http_body
